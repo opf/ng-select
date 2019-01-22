@@ -4,6 +4,8 @@
     "node": ">= 6.9.0",
     "npm": ">= 3.0.0"
   },
+  "name": "@ng-select/ng-select",
+  "version": "2.13.3",
   "scripts": {
     "clean": "rimraf out-tsc dist/* integration/node_modules/@ng-select",
     "prebuild": "yarn clean",
@@ -83,5 +85,8 @@
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "3.1.5",
     "zone.js": "^0.8.26"
+  },
+  "dependencies": {
+    "yarn": "^1.13.0"
   }
 }
