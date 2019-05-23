@@ -94,6 +94,10 @@ export class NgDropdownPanelComponent implements OnInit, OnChanges, OnDestroy, A
         this._dropdown = _elementRef.nativeElement;
     }
 
+    get currentPosition(): DropdownPosition {
+        return this._currentPosition;
+    }
+
     @HostListener('mousedown', ['$event'])
     handleMousedown($event: MouseEvent) {
         const target = $event.target as HTMLElement;
@@ -101,7 +105,6 @@ export class NgDropdownPanelComponent implements OnInit, OnChanges, OnDestroy, A
             return;
         }
         $event.preventDefault();
-        $event.stopPropagation();
     }
 
     ngOnInit() {
@@ -129,6 +132,7 @@ export class NgDropdownPanelComponent implements OnInit, OnChanges, OnDestroy, A
         this._disposeScrollListener();
         this._destroy$.next();
         this._destroy$.complete();
+        this._destroy$.unsubscribe();
         if (this.appendTo) {
             this._renderer.removeChild(this._dropdown.parentNode, this._dropdown);
         }
@@ -136,6 +140,9 @@ export class NgDropdownPanelComponent implements OnInit, OnChanges, OnDestroy, A
 
     ngAfterContentInit() {
         this._whenContentReady().then(() => {
+            if (this._destroy$.closed) {
+                return;
+            }
             if (this.appendTo) {
                 this._appendDropdown();
                 this._handleDocumentResize();
@@ -182,24 +189,26 @@ export class NgDropdownPanelComponent implements OnInit, OnChanges, OnDestroy, A
     }
 
     updateDropdownPosition() {
-        this._currentPosition = this._calculateCurrentPosition(this._dropdown);
-        if (this._currentPosition === 'top') {
-            this._renderer.addClass(this._dropdown, TOP_CSS_CLASS);
-            this._renderer.removeClass(this._dropdown, BOTTOM_CSS_CLASS);
-            this._renderer.addClass(this._select, TOP_CSS_CLASS);
-            this._renderer.removeClass(this._select, BOTTOM_CSS_CLASS)
-        } else {
-            this._renderer.addClass(this._dropdown, BOTTOM_CSS_CLASS);
-            this._renderer.removeClass(this._dropdown, TOP_CSS_CLASS);
-            this._renderer.addClass(this._select, BOTTOM_CSS_CLASS);
-            this._renderer.removeClass(this._select, TOP_CSS_CLASS);
-        }
+        this._window.setTimeout(() => {
+            this._currentPosition = this._calculateCurrentPosition(this._dropdown);
+            if (this._currentPosition === 'top') {
+                this._renderer.addClass(this._dropdown, TOP_CSS_CLASS);
+                this._renderer.removeClass(this._dropdown, BOTTOM_CSS_CLASS);
+                this._renderer.addClass(this._select, TOP_CSS_CLASS);
+                this._renderer.removeClass(this._select, BOTTOM_CSS_CLASS)
+            } else {
+                this._renderer.addClass(this._dropdown, BOTTOM_CSS_CLASS);
+                this._renderer.removeClass(this._dropdown, TOP_CSS_CLASS);
+                this._renderer.addClass(this._select, BOTTOM_CSS_CLASS);
+                this._renderer.removeClass(this._select, TOP_CSS_CLASS);
+            }
 
-        if (this.appendTo) {
-            this._updateAppendedDropdownPosition();
-        }
+            if (this.appendTo) {
+                this._updateAppendedDropdownPosition();
+            }
 
-        this._dropdown.style.opacity = '1';
+            this._dropdown.style.opacity = '1';
+        }, 0);
     }
 
     private _handleOutsideClick($event: any) {

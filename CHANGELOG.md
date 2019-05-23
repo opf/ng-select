@@ -2,6 +2,154 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.20.0"></a>
+# [2.20.0](https://github.com/ng-select/ng-select/compare/v2.19.0...v2.20.0) (2019-05-18)
+
+
+### Bug Fixes
+
+* add tag on tab when isOpen = false ([ab8b661](https://github.com/ng-select/ng-select/commit/ab8b661)), closes [#1159](https://github.com/ng-select/ng-select/issues/1159)
+* disable input when max items is selected ([240f4b5](https://github.com/ng-select/ng-select/commit/240f4b5)), closes [#1168](https://github.com/ng-select/ng-select/issues/1168)
+* remove unnecessary stopPropagation calls ([e994937](https://github.com/ng-select/ng-select/commit/e994937)), closes [#1169](https://github.com/ng-select/ng-select/issues/1169)
+* take into account bindLabel when adding tag ([36bc0d2](https://github.com/ng-select/ng-select/commit/36bc0d2)), closes [#1141](https://github.com/ng-select/ng-select/issues/1141)
+* take into account bindValue if groupValue is used ([941217f](https://github.com/ng-select/ng-select/commit/941217f)), closes [#1161](https://github.com/ng-select/ng-select/issues/1161)
+
+
+### Features
+
+* **trackByFn:** allow to provide custom trackBy function ([0afa9c1](https://github.com/ng-select/ng-select/commit/0afa9c1)), closes [#1134](https://github.com/ng-select/ng-select/issues/1134)
+
+
+
+<a name="2.19.0"></a>
+# [2.19.0](https://github.com/ng-select/ng-select/compare/v2.18.0...v2.19.0) (2019-05-04)
+
+
+### Features
+
+* add getter for current dropdown position ([0cc4203](https://github.com/ng-select/ng-select/commit/0cc4203))
+
+
+
+<a name="2.18.0"></a>
+# [2.18.0](https://github.com/ng-select/ng-select/compare/v2.17.0...v2.18.0) (2019-04-20)
+
+
+### Features
+
+* proper ant design theme ([b6c8535](https://github.com/ng-select/ng-select/commit/b6c8535))
+
+
+
+<a name="2.17.0"></a>
+# [2.17.0](https://github.com/ng-select/ng-select/compare/v2.16.4...v2.17.0) (2019-04-11)
+
+
+### Features
+
+* add ant-design theme ([b1f3446](https://github.com/ng-select/ng-select/commit/b1f3446))
+
+
+
+<a name="2.16.4"></a>
+## [2.16.4](https://github.com/ng-select/ng-select/compare/v2.16.3...v2.16.4) (2019-04-01)
+
+
+### Bug Fixes
+
+* **hideSelected:** allow in single selection ([ee9ee0d](https://github.com/ng-select/ng-select/commit/ee9ee0d)), closes [#1059](https://github.com/ng-select/ng-select/issues/1059)
+
+
+
+<a name="2.16.3"></a>
+## [2.16.3](https://github.com/ng-select/ng-select/compare/v2.16.2...v2.16.3) (2019-03-28)
+
+
+
+<a name="2.16.2"></a>
+## [2.16.2](https://github.com/ng-select/ng-select/compare/v2.16.1...v2.16.2) (2019-03-08)
+
+
+### Bug Fixes
+
+* add timeout for dropdown panel to fully render ([d38f897](https://github.com/ng-select/ng-select/commit/d38f897)), closes [#1042](https://github.com/ng-select/ng-select/issues/1042)
+
+
+
+<a name="2.16.1"></a>
+## [2.16.1](https://github.com/ng-select/ng-select/compare/v2.16.0...v2.16.1) (2019-03-08)
+
+
+### Bug Fixes
+
+* do not append dropdown when it is destroyed ([#1091](https://github.com/ng-select/ng-select/issues/1091)) ([d9e23c6](https://github.com/ng-select/ng-select/commit/d9e23c6))
+
+
+
+<a name="2.16.0"></a>
+# [2.16.0](https://github.com/ng-select/ng-select/compare/v2.15.3...v2.16.0) (2019-02-28)
+
+
+### Bug Fixes
+
+* material theme input container on IE ([#1054](https://github.com/ng-select/ng-select/issues/1054)) ([236e7b4](https://github.com/ng-select/ng-select/commit/236e7b4))
+
+
+### Features
+
+* expose filtered items through search event ([3d14002](https://github.com/ng-select/ng-select/commit/3d14002)), closes [#973](https://github.com/ng-select/ng-select/issues/973)
+
+
+
+<a name="2.15.3"></a>
+## [2.15.3](https://github.com/ng-select/ng-select/compare/v2.15.2...v2.15.3) (2019-02-05)
+
+
+### Bug Fixes
+
+* remove disabled items while setting new model ([9036672](https://github.com/ng-select/ng-select/commit/9036672)), closes [#1043](https://github.com/ng-select/ng-select/issues/1043)
+
+
+
+<a name="2.15.2"></a>
+## [2.15.2](https://github.com/ng-select/ng-select/compare/v2.15.1...v2.15.2) (2019-02-01)
+
+
+### Bug Fixes
+
+* **single:** allow to unselect last selected value even if disabled ([25e8e4f](https://github.com/ng-select/ng-select/commit/25e8e4f)), closes [#1036](https://github.com/ng-select/ng-select/issues/1036)
+* add class to dropdown panel only when appendTo is used ([797ac9e](https://github.com/ng-select/ng-select/commit/797ac9e)), closes [#1035](https://github.com/ng-select/ng-select/issues/1035)
+* **themes:** use more variables ([45af289](https://github.com/ng-select/ng-select/commit/45af289)), closes [#388](https://github.com/ng-select/ng-select/issues/388)
+
+
+
+<a name="2.15.1"></a>
+## [2.15.1](https://github.com/ng-select/ng-select/compare/v2.15.0...v2.15.1) (2019-01-25)
+
+
+### Bug Fixes
+
+* set items from ngOptions only when [items] unused ([f4e4c6b](https://github.com/ng-select/ng-select/commit/f4e4c6b))
+
+
+
+<a name="2.15.0"></a>
+# [2.15.0](https://github.com/ng-select/ng-select/compare/v2.14.0...v2.15.0) (2019-01-24)
+
+
+### Bug Fixes
+
+* **ng-option:** don't filter out empty array ([90feb5f](https://github.com/ng-select/ng-select/commit/90feb5f)), closes [#1019](https://github.com/ng-select/ng-select/issues/1019)
+* don't allow to unselect disabled items ([26744d0](https://github.com/ng-select/ng-select/commit/26744d0)), closes [#971](https://github.com/ng-select/ng-select/issues/971)
+
+
+### Features
+
+* added autocorrect and autocapitalize inputs ([#1017](https://github.com/ng-select/ng-select/issues/1017)) ([c7dd2ac](https://github.com/ng-select/ng-select/commit/c7dd2ac)), closes [#994](https://github.com/ng-select/ng-select/issues/994)
+* initial children grouping implementation ([#1022](https://github.com/ng-select/ng-select/issues/1022)) ([75bd930](https://github.com/ng-select/ng-select/commit/75bd930)), closes [#186](https://github.com/ng-select/ng-select/issues/186)
+
+
+
 <a name="2.14.0"></a>
 # [2.14.0](https://github.com/ng-select/ng-select/compare/v2.13.3...v2.14.0) (2019-01-09)
 

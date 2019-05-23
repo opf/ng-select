@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 const defaultTheme = require('./../../../src/themes/default.theme.scss');
 const materialTheme = require('./../../../src/themes/material.theme.scss');
+const antDesignTheme = require('./../../../src/themes/ant.design.theme.scss');
 
 type langDir = 'ltr' | 'rtl';
 
@@ -24,10 +25,11 @@ type langDir = 'ltr' | 'rtl';
 
             <div class="collapse navbar-collapse">
                 <div ngbDropdown class="d-inline-block">
-                    <button class="btn btn-outline-light btn-sm" style="width: 130px;" ngbDropdownToggle>{{theme}}</button>
+                    <button class="btn btn-outline-light btn-sm" style="width: 150px;" ngbDropdownToggle>{{theme}}</button>
                     <div ngbDropdownMenu>
                         <button (click)="setTheme('Default theme')" class="dropdown-item btn-sm">Default theme</button>
                         <button (click)="setTheme('Material theme')" class="dropdown-item btn-sm">Material theme</button>
+                        <button (click)="setTheme('Ant Design theme')" class="dropdown-item btn-sm">Ant Design theme</button>
                     </div>
                 </div>
 
@@ -68,10 +70,16 @@ export class LayoutHeaderComponent implements OnInit {
         this.theme = theme;
         if (this.theme === 'Default theme') {
             materialTheme.unuse();
+            antDesignTheme.unuse();
             defaultTheme.use();
-        } else {
+        } else if (this.theme === 'Material theme') {
+            antDesignTheme.unuse();
             defaultTheme.unuse();
             materialTheme.use();
+        } else {
+            defaultTheme.unuse();
+            materialTheme.unuse();
+            antDesignTheme.use();
         }
     }
 

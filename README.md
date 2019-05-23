@@ -144,6 +144,7 @@ map: {
 | placeholder | `string` | `-` | no | Placeholder text. |
 | [searchable] | `boolean` | `true` | no | Allow to search for value. Default `true`|
 | [searchFn] | `(term: string, item: any) => boolean` | `null` | no | Allow to filter by custom search function |
+| [trackByFn] | `(item: any) => any` | `null` | no | Provide custom trackBy function |
 | [clearSearchOnAdd] | `boolean` | `true` | no | Clears search input when item is selected. Default `true`. Default `false` when **closeOnSelect** is `false` |
 | [selectOnTab] | `boolean` | `false` | no | Select marked dropdown item using tab. Default `false`|
 | [openOnEnter] | `boolean` | `true` | no | Open dropdown using enter. Default `true`|
@@ -163,7 +164,7 @@ map: {
 | (close)  | Fired on select dropdown close |
 | (clear)  | Fired on clear icon click |
 | (focus)  | Fired on select focus |
-| (search) | Fired while typing search term |
+| (search) | Fired while typing search term. Outputs search term with filtered items |
 | (open)  | Fired on select dropdown open |
 | (remove)  | Fired when item is removed while `[multiple]="true"` |
 | (scroll)  | Fired when scrolled. Provides the start and end index of the currently available items. Can be used for loading more items in chunks before the user has scrolled all the way to the bottom of the list. |
@@ -229,7 +230,7 @@ If you are using `ViewEncapsulation`, your should use special `::ng-deep` select
     border-radius: 0;
 }
 ```
-WARNING: Keep in mind that ng-deep is deprecated and there is no alternative to it yet. See [https://github.com/angular/angular/issues/17867](Here).
+WARNING: Keep in mind that ng-deep is deprecated and there is no alternative to it yet. See [Here](https://github.com/angular/angular/issues/17867).
 
 ### Validation state
 By default when you use reactive forms validators or template driven forms validators css class `ng-invalid` will be applied on ng-select. You can show errors state by adding custom css style
